@@ -9,7 +9,7 @@ Create `index.html` in dist folder
 
 Include `materialistic.min.js`
 
-Current catalog of components here: https://zb0t.github.io/materialistic/
+Current catalog of components here: https://materialistic.herokuapp.com
 
 TODO
 
