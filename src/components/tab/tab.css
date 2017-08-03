@@ -1,0 +1,119 @@
+[data-tabs] {
+	display: flex;
+	justify-content: center;
+	pointer-events: none;
+	position: relative;
+	width: 100%;
+}
+
+[data-tabs] [data-indicator] {
+	appearance: none;
+	backface-visibility: hidden;
+	background-color: #333;
+	border: none;
+	bottom: 0;
+	height: 2px;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	pointer-events: none;
+	position: absolute;
+	transition: transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	will-change: transform;
+}
+
+[data-tabs] [data-tab] {
+	align-items: flex-end;
+	color: rgba(51,51,51,0.70);
+	cursor: pointer;
+	display: flex;
+	flex: 1;
+	flex-wrap: wrap;
+	font-weight: 500;
+	height: 48px;
+	justify-content: center;
+	line-height: 8px;
+	max-width: 264px;
+	min-width: 72px;
+	overflow: hidden;
+	padding: 0 0 20px 0;
+	pointer-events: auto;
+	position: relative;
+	text-transform: uppercase;
+	transition: color 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	user-select: none;
+}
+
+[data-tabs] [data-tab] i {
+	line-height: 8px;
+}
+
+[data-tabs] [data-tab] div.bg {
+	background-color: #ddd;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	transition: opacity 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	width: 100%;
+	will-change: opacity;
+	z-index: -2;
+}
+
+[data-tabs] [data-tab]:not(.mobile):hover div.bg, [data-tabs] [data-tab]:not([data-icon]).mobile.hover div.bg {
+	opacity: 0.5;
+}
+
+[data-tabs] [data-tab]:not(.mobile):active div.bg, [data-tabs] [data-tab]:not([data-icon]).mobile.hover div.bg {
+	opacity: 1;
+}
+
+[data-tabs] [data-tab][data-active] {
+	color: inherit;
+	pointer-events: none;
+}
+
+[data-tabs][data-icon-label] [data-tab] {
+	height: 72px;
+	padding: 0 0 16px 0;
+}
+
+[data-tabs][data-icon-label] [data-tab] span {
+	font-size: 14px;
+	text-align: center;
+	width: 100%;
+}
+
+[data-tabs][data-primary] [data-indicator] {
+	background-color: #2196F3;
+}
+
+[data-tabs][data-primary] [data-tab] {
+	color: rgba(33,150,243, 0.70)
+}
+
+[data-tabs][data-primary] [data-tab][data-active] {
+	color: #2196F3;
+}
+
+[data-tabs][data-primary] div.bg {
+	background-color: rgba(33,150,243,0.25);
+}
+
+[data-tabs][data-accent] [data-indicator] {
+	background-color: #FF4081;
+}
+
+[data-tabs][data-accent] [data-tab] {
+	color: rgba(255,64,129,0.70);
+}
+
+[data-tabs][data-accent] [data-tab][data-active] {
+	color: #FF4081;
+}
+
+[data-tabs][data-accent] div.bg {
+	background-color: rgba(255,64,129,0.25);
+}

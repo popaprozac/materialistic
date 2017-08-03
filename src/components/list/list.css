@@ -1,0 +1,76 @@
+[data-list] {
+	appearance: none;
+	background-color: #fff;
+	list-style: none;
+	margin: 0;
+	padding: 8px 0;
+	user-select: none;
+}
+
+[data-list-item] {
+	cursor: pointer;
+	line-height: 48px;
+	min-height: 48px;
+	overflow: hidden;
+	padding: 0 16px;
+	position: relative;
+	z-index: 1;
+}
+
+[data-list-item] * {
+	pointer-events: none;
+}
+
+[data-list-item] div.bg {
+	background-color: #ddd;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	transition: opacity 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	user-select: none;
+	width: 100%;
+	will-change: opacity;
+	z-index: -2;
+}
+
+[data-list-item]:not(.mobile):hover div.bg, [data-list-item]:not([data-icon]).mobile.hover div.bg {
+	opacity: 0.5;
+}
+
+[data-list-item]:not(.mobile):active div.bg, [data-list-item]:not([data-icon]).mobile.hover div.bg {
+	opacity: 1;
+}
+
+[data-list-item][data-multiline] {
+	min-height: 72px;
+	line-height: initial;
+	padding: 18px 16px 16px 16px;
+}
+
+[data-list-item][data-multiline] p {
+	margin: 0;
+}
+
+[data-list-item][data-multiline] p:first-of-type {
+	line-height: 16px;
+	margin-bottom: 2px;
+}
+
+[data-list-item][data-multiline] p:not(:first-of-type) {
+	color: #666;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+[data-list-item][data-multiline] p:nth-of-type(3) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+[data-list-item] p:nth-of-type(2)[data-dark] {
+	color: #333;
+}

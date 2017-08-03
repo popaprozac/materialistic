@@ -1,0 +1,380 @@
+[data-input] {
+	display: inline-block;
+	margin: 8px 0 0 0;
+	position: relative;
+}
+
+[data-input] input {
+	appearance: none;
+	border: none;
+	border-bottom: 2px solid #ddd;
+	border-radius: 0;
+	box-shadow: none;
+	font-family: 'Roboto', sans-serif;
+	font-size: inherit;
+	margin: 10px 0 0 0;
+	outline: none;
+	padding: 8px 0;
+	resize: none;
+}
+
+[data-input] input::placeholder {
+	color: #999;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
+
+[data-input] hr {
+	appearance: none;
+	background-color: #2196F3;
+	border: none;
+	bottom: 0;
+	height: 2px;
+	margin: 0;
+	position: absolute;
+	transform: scaleX(0);
+	transition: background-color 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	width: 100%;
+	will-change: background-color, transform;
+}
+
+[data-input] hr.show {
+	transform: scaleX(1);
+}
+
+[data-input][data-floating-label] label {
+	bottom: 10px;
+	color: #999;
+	font-size: 16px;
+	left: 0;
+	pointer-events: none;
+	position: absolute;
+	transform-origin: 0 0;
+	transition: color 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	will-change: color, transform;
+}
+
+[data-input][data-floating-label] input::placeholder {
+	opacity: 0;
+}
+
+[data-input][data-error] {
+	margin: 8px 0 16px 0;
+}
+
+[data-input][data-error] span {
+	bottom: -16px;
+	color: #F44336;
+	font-size: 11px;
+	left: 0;
+	max-width: 100%;
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	transition: color 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	will-change: color, opacity;
+}
+
+/*  */
+
+[data-slider] {
+	cursor: default;
+	display: inline-block;
+	margin: 8px 0;
+	min-height: 18px;
+	position: relative;
+	user-select: none;
+	width: 200px;
+}
+
+[data-slider] input {
+	appearance: none;
+	cursor: pointer;
+	margin: 0;
+	outline: none;
+	padding: 8px 0;
+	position: absolute;
+	top: 50%;
+	transform: translate3d(0,-50%,0);
+	width: 100%;
+}
+
+input[type=range]::-moz-focus-outer {
+	border: 0;
+}
+
+[data-slider] input::-webkit-slider-runnable-track {
+	appearance: none;
+  background: #b0b0b0;
+	height: 2px;
+	pointer-events: none;
+	transition: background 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	will-change: background;
+}
+
+[data-slider] input:active::-webkit-slider-runnable-track {
+	background: #939393;
+}
+
+[data-slider] input::-moz-range-track {
+	appearance: none;
+  background: #b0b0b0;
+	height: 2px;
+	pointer-events: none;
+	transition: background 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	will-change: background;
+}
+
+[data-slider] input:active::-moz-range-track {
+	background: #939393;
+}
+
+[data-slider] hr {
+	appearance: none;
+	background-color: #2196F3;
+	border: none;
+	height: 2px;
+	margin: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 50%;
+	transform: translate3d(0,-50%,0) scaleX(0);
+	transform-origin: 0 0;
+	width: 100%;
+	z-index: 1;
+}
+
+[data-slider] input::-webkit-slider-thumb {
+	appearance: none; 
+	background-color: #2196F3;
+	border-color: #2196F3;
+	border-radius: 50%;
+	cursor: grab;
+	height: 12px;
+	margin: -6px 0 0 0;
+	transform: scale(1.1);
+	transition: background-color 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	width: 12px;
+	will-change: background-color, border-color, transform;
+}
+
+[data-slider] input:active::-webkit-slider-thumb {
+	cursor: grabbing;
+	transform: scale(1.75);
+}
+
+[data-slider] input::-moz-range-thumb {
+	appearance: none; 
+	background-color: #2196F3;
+	border-color: #2196F3;
+	border-radius: 50%;
+	cursor: grab;
+	height: 12px;
+	margin: -6px 0 0 0;
+	transform: scale(1.1);
+	transition: background-color 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	width: 12px;
+	will-change: background-color, background-color, transform;
+}
+
+[data-slider] input:active::-moz-range-thumb {
+	cursor: grabbing;
+	transform: scale(1.75);
+}
+
+[data-slider] input.zero::-webkit-slider-thumb {
+	background-color: #fff;
+	border: 2px solid #b0b0b0;
+}
+
+[data-slider] input.zero:active::-webkit-slider-thumb {
+	background-color: #2196F3;
+	border-color: #2196F3;
+}
+
+[data-slider] input.zero::-moz-range-thumb {
+	background-color: #fff;
+	border: 2px solid #b0b0b0;
+}
+
+[data-slider] input.zero:active::-moz-range-thumb {
+	background-color: #2196F3;
+	border-color: #2196F3;
+}
+
+[data-slider][data-discrete] label {
+	font-size: 13px;
+	font-weight: 500;
+	height: 40px;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 50%;
+	transform: translate3d(0,-50%,0);
+	width: 40px;
+}
+
+[data-slider][data-discrete] label span {
+	color: #fff;
+	left: 50%;
+	opacity: 0;
+	position: absolute;
+	top: -30%;
+	transform: translate3d(-50%,0,0);
+	transition: opacity 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+	will-change: opacity;
+}
+
+[data-slider][data-discrete] label svg {
+	height: 40px;
+	left: 100%;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	transform: rotate(180deg) scaleY(0);
+	transform-origin: 0 0;
+	transition: opacity 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	width: 40px;
+	will-change: opacity, transform;
+}
+
+[data-slider][data-discrete] input:active ~ label span {
+	opacity: 1;
+}
+
+[data-slider][data-discrete] input:active ~ label svg {
+	opacity: 1;
+	transform: rotate(180deg) scaleY(1);
+}
+
+[data-slider][data-discrete] input:active ~ label {
+	opacity: 1;
+}
+
+[data-slider][data-discrete] input:active::-webkit-slider-thumb {
+	transform: scale(0);
+}
+
+[data-slider][data-discrete] input:active::-moz-range-thumb
+
+[data-slider][data-discrete] input.zero ~ label svg path {
+	fill: #999;
+}
+
+[data-checkbox], [data-radio] {
+	cursor: pointer;
+	display: inline-block;
+	height: 46px;
+	position: relative;
+	user-select: none;
+	width: 46px;
+}
+
+[data-checkbox] input, [data-radio] input {
+	appearance: none;
+	background: none;
+	border: none;
+	height: 46px;
+	left: 50%;
+	margin: 0;
+	outline: none;
+	pointer-events: none;
+	position: absolute;
+	top: 50%;
+	transform: translate3d(-50%,-50%,0);
+	user-select: none;
+	visibility: hidden;
+	width: 46px;
+}
+
+[data-checkbox]:before {
+	content: "\E835";
+	font-family: "Material Icons";
+	font-size: 24px;
+	height: 46px;
+	left: 50%;
+	line-height: 46px;
+	opacity: 1;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	transform: translate3d(-50%,-50%,0);
+	transition: opacity 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	width: 46px;
+}
+
+[data-radio]:before {
+	content: "\E836";
+	font-family: "Material Icons";
+	font-size: 24px;
+	height: 46px;
+	left: 50%;
+	line-height: 46px;
+	opacity: 1;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	transform: translate3d(-50%,-50%,0);
+	transition: opacity 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	width: 46px;
+}
+
+[data-checkbox][data-checked]:before, [data-radio][data-checked]:before {
+	opacity: 0;
+}
+
+[data-checkbox]:after {
+	color: #2196F3;
+	content: "\E834";
+	font-family: "Material Icons";
+	font-size: 24px;
+	height: 46px;
+	left: 50%;
+	line-height: 46px;
+	opacity: 0;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	transform: translate3d(-50%,-50%,0);
+	transition: opacity 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	width: 46px;
+}
+
+[data-checkbox][data-accent]:after {
+	color: #FF4081;
+}
+
+[data-radio]:after {
+	color: #2196F3;
+	content: "\E837";
+	font-family: "Material Icons";
+	font-size: 24px;
+	height: 46px;
+	left: 50%;
+	line-height: 46px;
+	opacity: 0;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	transform: translate3d(-50%,-50%,0);
+	transition: opacity 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	width: 46px;
+}
+
+[data-radio][data-accent]:after {
+	color: #FF4081;
+}
+
+[data-checkbox][data-checked]:after, [data-radio][data-checked]:after {
+	opacity: 1;
+}
+
+[data-checkbox] label, [data-radio] label {
+	cursor: pointer;
+	padding: 8px 8px 8px 0;
+	position: absolute;
+	top: 50%;
+	transform: translate3d(46px,-50%,0);
+	user-select: none;
+}

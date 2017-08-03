@@ -1,0 +1,8 @@
+[data-divider] {
+	appearance: none;
+	background-color: #ddd;
+	border: none;
+	box-shadow: none;
+	height: 1px;
+	margin: 8px 0;
+}

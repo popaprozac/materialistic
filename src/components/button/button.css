@@ -1,0 +1,381 @@
+/*
+
+
+
+  _____   _   _   _____   _______ 
+ |_   _| | \ | | |_   _| |__   __|
+   | |   |  \| |   | |      | |   
+   | |   | . ` |   | |      | |   
+  _| |_  | |\  |  _| |_     | |   
+ |_____| |_| \_| |_____|    |_|   
+
+
+
+
+*/
+
+button {
+	appearance: none;
+	backface-visibility: hidden;
+	background-color: #fff;
+	border: none;
+	border-radius: 2px;
+	color: inherit;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 600;
+	height: 36px;
+	margin: 5px;
+	outline: none;
+	overflow: hidden;
+	padding: 0 16px;
+	position: relative;
+	text-transform: uppercase;
+	user-select: none;
+	z-index: 1;
+}
+
+button:active {
+	color: inherit;
+}
+
+button div.bg {
+	background-color: #ddd;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	transition: opacity 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	width: 100%;
+	will-change: opacity;
+	z-index: -2;
+}
+
+button:not(.mobile):hover div.bg, button:not([data-icon]).mobile.hover div.bg {
+	opacity: 0.5;
+}
+
+button:not(.mobile):active div.bg, button:not([data-icon]).mobile.hover div.bg {
+	opacity: 1;
+}
+
+/*
+
+
+
+  _____    _____    _____   __  __              _____   __     __
+ |  __ \  |  __ \  |_   _| |  \/  |     /\     |  __ \  \ \   / /
+ | |__) | | |__) |   | |   | \  / |    /  \    | |__) |  \ \_/ / 
+ |  ___/  |  _  /    | |   | |\/| |   / /\ \   |  _  /    \   /  
+ | |      | | \ \   _| |_  | |  | |  / ____ \  | | \ \     | |   
+ |_|      |_|  \_\ |_____| |_|  |_| /_/    \_\ |_|  \_\    |_| 
+
+
+
+
+*/
+
+button[data-primary]:not([data-raised]) {
+	color: #2196F3;
+}
+
+button[data-primary]:not([data-raised]) div.bg {
+	background-color: rgba(33,150,243,0.25);
+}
+
+/*
+
+
+
+              _____    _____   ______   _   _   _______ 
+     /\      / ____|  / ____| |  ____| | \ | | |__   __|
+    /  \    | |      | |      | |__    |  \| |    | |   
+   / /\ \   | |      | |      |  __|   | . ` |    | |   
+  / ____ \  | |____  | |____  | |____  | |\  |    | |   
+ /_/    \_\  \_____|  \_____| |______| |_| \_|    |_|   
+
+
+
+
+*/
+
+button[data-accent]:not([data-raised]) {
+	color: #FF4081;
+}
+
+button[data-accent]:not([data-raised]) div.bg {
+	background-color: rgba(255,64,129,0.25);
+}
+
+/*
+
+
+
+  _____    ______   _   _    _____   ______ 
+ |  __ \  |  ____| | \ | |  / ____| |  ____|
+ | |  | | | |__    |  \| | | (___   | |__   
+ | |  | | |  __|   | . ` |  \___ \  |  __|  
+ | |__| | | |____  | |\  |  ____) | | |____ 
+ |_____/  |______| |_| \_| |_____/  |______|
+
+
+
+
+*/
+
+button[data-dense] {
+	font-size: 13px;
+	height: 32px;
+}
+
+/*
+
+
+
+  _____               _____    _____   ______   _____  
+ |  __ \      /\     |_   _|  / ____| |  ____| |  __ \ 
+ | |__) |    /  \      | |   | (___   | |__    | |  | |
+ |  _  /    / /\ \     | |    \___ \  |  __|   | |  | |
+ | | \ \   / ____ \   _| |_   ____) | | |____  | |__| |
+ |_|  \_\ /_/    \_\ |_____| |_____/  |______| |_____/
+
+
+
+
+*/
+
+button[data-raised] {
+	 background-color: #f1f1f1; 
+	box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+	transition: box-shadow 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	will-change: box-shadow;
+}
+
+button[data-raised][data-primary] {
+	background-color: #2196F3;
+	color: #fff;
+}
+
+button[data-raised][data-primary] div.bg {
+	background-color: color(#2196F3 shade(20%));
+}
+
+button[data-raised][data-accent] {
+	background-color: #FF4081;
+	color: #fff;
+}
+
+button[data-raised][data-accent] div.bg {
+	background-color: color(#FF4081 shade(20%));
+}
+
+button[data-raised]:active {
+	box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+/*
+
+
+
+  ______              ____  
+ |  ____|     /\     |  _ \ 
+ | |__       /  \    | |_) |
+ |  __|     / /\ \   |  _ < 
+ | |       / ____ \  | |_) |
+ |_|      /_/    \_\ |____/ 
+
+
+
+
+*/
+
+button[data-fab] {
+	align-items: center;
+	background-color: #f1f1f1;
+	border-radius: 50%;
+	box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+	display: inline-flex;
+	height: 56px;
+	justify-content: center;
+	padding: 0;
+	transition: box-shadow 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	width: 56px;
+	will-change: box-shadow;
+}
+
+button[data-fab][data-mini] {
+	height: 40px;
+	width: 40px;
+}
+
+button[data-fab][data-primary] {
+	background-color: #2196F3;
+	color: #fff;
+}
+
+button[data-fab][data-primary] div.bg {
+	background-color: color(#2196F3 shade(20%));
+}
+
+button[data-fab][data-accent] {
+	background-color: #FF4081;
+	color: #fff;
+}
+
+button[data-fab][data-accent] div.bg {
+	background-color: color(#FF4081 shade(20%));
+}
+
+button[data-fab]:active {
+	box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12);
+}
+
+button[data-fab] i {
+	pointer-events: none;
+	width: 100%;
+}
+
+/*  morph to toolbar  */
+
+/* button[data-fab][data-toolbar] [data-tabs] {
+	display: none;
+	opacity: 0;
+	transition: opacity 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
+	width: 100%;
+}
+
+button[data-fab][data-toolbar] [data-tabs] [data-tab] {
+	flex: 1;
+	height: 100%;
+}
+
+[data-fab-toolbar] {
+	position: fixed;
+	transition: transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), width 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	z-index: 101;
+}
+
+[data-fab-toolbar] button {
+	left: 0;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	transition: border-radius 0.15s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), width 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+[data-fab-toolbar] button div.bg {
+	display: none;
+}
+
+[data-fab-toolbar] button i {
+	left: 50%;
+	pointer-events: none;
+	position: absolute;
+	top: 50%;
+	transform: translate3d(-50%,-50%,0);
+	transition: opacity 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
+} */
+
+
+/* speed dial */
+
+[data-speed-dial] {
+	display: inline-block;
+	position: relative;
+	z-index: 99;
+}
+
+[data-speed-dial] [data-options] {
+	bottom: 100%;
+	left: 50%;
+	list-style: none;
+	margin: 0;
+	opacity: 0;
+	padding: 0;
+	pointer-events: none;
+	position: absolute;
+	transform: translate3d(-50%,8px,0) scaleY(0);
+	transform-origin: bottom center;
+	transition: opacity 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	will-change: opacity, transform;
+}
+
+[data-speed-dial] [data-options] [data-option] {
+	margin: 8px 0;
+}
+
+[data-speed-dial] [data-options] [data-option] i {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate3d(-50%,-50%,0);
+}
+
+[data-speed-dial][data-open] [data-options] {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translate3d(-50%,0,0) scaleY(1);
+}
+
+[data-speed-dial] button:first-of-type:not([data-option]) i {
+	transition: transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	will-change: transform;
+}
+
+[data-speed-dial][data-open] button:first-of-type:not([data-option]) i {
+	transform: rotate(90deg);
+}
+
+/*
+
+
+
+  _____    _____    ____    _   _ 
+ |_   _|  / ____|  / __ \  | \ | |
+   | |   | |      | |  | | |  \| |
+   | |   | |      | |  | | | . ` |
+  _| |_  | |____  | |__| | | |\  |
+ |_____|  \_____|  \____/  |_| \_|
+
+
+
+
+*/
+
+button[data-icon] {
+	border-radius: 50%;
+	height: 46px;
+	margin: 0;
+	overflow: visible;
+	padding: 0;
+	width: 46px;
+}
+
+button[data-icon] div.bg {
+	display: none;
+}
+
+button[data-icon] i {
+	line-height: 46px;
+	pointer-events: none;
+}
+
+/* mobile */
+
+button:not([data-icon]):not(.mobile):hover:before {
+	opacity: 0.5;
+}
+
+button:not([data-icon]):not(.mobile):active:after {
+	opacity: 0.5;
+}
+
+button:not([data-icon]).mobile.hover:before {
+    opacity: 0.5;
+}
+
+button:not([data-icon]).mobile.active:after {
+    opacity: 0.5;
+}

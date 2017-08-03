@@ -1,0 +1,29 @@
+div.ripple {
+	backface-visibility: hidden;
+	background-color: #aaa;
+	border-radius: 50%;
+	opacity: 0.75;
+	pointer-events: none;
+	position: absolute;
+	transform: translate3d(-50%,-50%,0) scale(0);
+	-sand-transform: translate3d(-50%,-50%,0) scale(0);
+	transition: background-color 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.5s, transform 0.65s cubic-bezier(0.4, 0.0, 0.2, 1);
+	will-change: background-color, opacity;
+	z-index: -1;
+}
+
+[data-primary]:not([data-raised]) div.ripple {
+	background-color: rgba(33,150,243,0.35);
+}
+
+[data-accent]:not([data-raised]) div.ripple {
+	background-color: rgba(255,64,129,0.35);
+}
+
+[data-primary][data-raised] div.ripple, [data-accent][data-raised] div.ripple, [data-primary][data-fab] div.ripple, [data-accent][data-fab] div.ripple {
+	background-color: rgba(255,255,255,0.35)
+}
+
+[data-checked] div.ripple {
+	background-color: rgba(33,150,243,0.35);
+}

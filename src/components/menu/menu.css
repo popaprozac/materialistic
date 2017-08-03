@@ -1,0 +1,36 @@
+[data-menu] {
+	display: inline-block;
+	position: relative;
+}
+
+[data-menu] button {
+	z-index: 1;
+}
+
+[data-menu] [data-list] {
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.137255) 0px 2px 2px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 5px 0px;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	transform: scaleX(0.85) scaleY(0);
+	transform-origin: 0 0;
+	transition: opacity 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+	width: 120px;
+	will-change: opacity, transform;
+	z-index: 99;
+}
+
+[data-menu][data-inverse] [data-list] {
+	left: initial;
+	right: 0;
+	transform: scaleX(0.85) scaleY(0);
+	transform-origin: top right;
+}
+
+[data-menu][data-open] [data-list] {
+	opacity: 1;
+	pointer-events: auto;
+	transform: scaleX(1) scaleY(1);
+}
