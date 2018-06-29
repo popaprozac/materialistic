@@ -1,7 +1,7 @@
 # Materialistic
 Framework agnostics Material Design components
 
-`yarn` or `npm i`
+`yarn install` or `npm i`
 
 `yarn build` or `npm build`
 
